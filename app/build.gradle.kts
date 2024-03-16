@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -51,6 +53,10 @@ android {
 
 dependencies {
 
+    val lifecycle_version = "2.7.0"
+    val nav_version = "2.7.7"
+    val room_version = "2.6.1"
+
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
@@ -66,4 +72,36 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+//    These all are related to jetpack compose dependency
+            // ViewModel
+            implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+            // ViewModel utilities for Compose
+            implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
+
+            // Navigation with Jetpack Compose Integration
+            implementation("androidx.navigation:navigation-compose:$nav_version")
+
+            // Compose Icon
+            implementation("androidx.compose.material:material:1.6.3")
+
+            implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    //Coroutine dependency
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+
+    // Dragger - Hilt
+    implementation("com.google.dagger:hilt-android:2.49")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
+
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+
+    //room database
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+
+    // Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:2.6.1")
+
+
 }

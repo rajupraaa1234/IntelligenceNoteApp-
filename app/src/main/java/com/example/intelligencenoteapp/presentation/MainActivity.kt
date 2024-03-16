@@ -1,4 +1,4 @@
-package com.example.intelligencenoteapp
+package com.example.intelligencenoteapp.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
