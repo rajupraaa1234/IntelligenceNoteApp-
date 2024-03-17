@@ -1,9 +1,11 @@
-package com.example.intelligencenoteapp.domain.model
+package com.example.intelligencenoteapp.notes_features.data.domain.model
 
 import androidx.compose.ui.graphics.Color
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 import javax.annotation.PropertyKey
 
+@Entity
 data class Note(
     val title: String,
     val content:String,
