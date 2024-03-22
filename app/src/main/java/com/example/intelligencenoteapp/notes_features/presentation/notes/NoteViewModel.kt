@@ -1,5 +1,6 @@
 package com.example.intelligencenoteapp.notes_features.presentation.notes
 
+import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -22,6 +23,7 @@ class NoteViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _state = mutableStateOf(NotesState())
+    val state: State<NotesState> = _state
     private var recentDeletedNote: Note? = null
 
     private var getNotesJob: Job? = null
